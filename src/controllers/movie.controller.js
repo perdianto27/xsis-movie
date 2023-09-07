@@ -13,11 +13,10 @@ exports.getMovie = async (req, res, next) => {
 
 exports.getMovieById = async (req, res, next) => {
 	try {
-		const id = req.param.id;
-		const payload = req.body;
-		const response = await service.getMovieById(id, payload);
+		const id = req.params.id;
+		const response = await service.getMovieById(id);
 
-		return successResponse(res, response, "Get Movie Information", 200);
+		return res.status(200).json(response);
 	} catch (error) {
 		next(error);
 	}
@@ -26,8 +25,8 @@ exports.getMovieById = async (req, res, next) => {
 exports.addMovie = async (req, res, next) => {
 	try {
 		const payload = req.body;
-		const response = await service.addMovie(payload, locales);
-		return successResponse(res, response, "Add Movie Success", 200);
+		const response = await service.addMovie(payload);
+		return res.status(200).json(response);
 	} catch (error) {
 		next(error);
 	}
@@ -35,11 +34,11 @@ exports.addMovie = async (req, res, next) => {
 
 exports.updateMovieById = async (req, res, next) => {
 	try {
-		const user_id = req.param.id;
+		const id = req.params.id;
 		const payload = req.body;
-		const response = await service.getMovieById(user_id, payload);
+		const response = await service.updateMovieById(id, payload);
 
-		return successResponse(res, response, "Update Movie Information", 200);
+		return res.status(200).json(response);
 	} catch (error) {
 		next(error);
 	}
@@ -47,10 +46,10 @@ exports.updateMovieById = async (req, res, next) => {
 
 exports.deleteMovieById = async (req, res, next) => {
 	try {
-		const id = req.param.id;
+		const id = req.params.id;
 		const response = await service.deleteMovieById(id);
 
-		return successResponse(res, response, "Delete Movie Information", 200);
+		return successResponse(res, {}, "Delete Movie Successfuly", 200);
 	} catch (error) {
 		next(error);
 	}

@@ -17,21 +17,33 @@ const getMovieById = async (id) => {
 };
 
 const updateMovieById = async (id, payload) => {
+	const data = {
+		title: payload.title,
+		description: payload.description,
+		rating: payload.rating,
+		image: payload.image
+	};
+
 	const movie = await Movie.findByPk(id);
 	if (!movie) {
 		throw new NotFound("movie not found");
 	}
 
-	await movie.update(payload);
+	const response = await Movie.update(data,
+		{
+			where: {
+				id
+			}
+		});
 	return movie;
 };
 
 const addMovie = async (payload) => {
 	const data = {
-		full_name: payload.name,
-		email: payload.email,
-		country: payload.country,
-		interest: payload.interest,
+		title: payload.title,
+		description: payload.description,
+		rating: payload.rating,
+		image: payload.image
 	};
 
 	const movie = await Movie.create(data);
@@ -45,8 +57,13 @@ const deleteMovieById = async (id) => {
 		throw new NotFound("movie not found");
 	}
 
-	await movie.delete(id);
-	return movie;
+	const response = await Movie.destroy({
+		where: {
+			id
+		}
+	});
+
+	return response;
 };
 
 module.exports = {
