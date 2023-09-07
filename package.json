@@ -1,19 +1,11 @@
 {
-  "name": "corenglish-rest-api",
+  "name": "xsis-rest-api",
   "version": "1.0.0",
-  "description": "COREnglish REST API",
+  "description": "xsis REST API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon bin/www",
-    "key:generate": "node bin/randomstring.js",
-    "db:seed:create": "npx sequelize-cli seed:generate",
-    "db:seed:up": "npx sequelize-cli db:seed:all",
-    "db:seed:down": "npx sequelize-cli db:seed:undo:all",
-    "db:migration:create": "npx sequelize-cli migration:generate",
-    "db:migration:up": "npx sequelize-cli db:migrate",
-    "db:migration:down": "npx sequelize-cli db:migrate:undo",
-    "db:migration:down:all": "npx sequelize-cli db:migrate:undo:all"
+    "start": "nodemon index.js",
+    "test": "jest --coverage=true --forceExit"
   },
   "dependencies": {
     "aws-sdk": "^2.1452.0",
@@ -48,19 +40,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/corenglish-web-app/corenglsih-rest-api.git"
+    "url": "https://github.com/perdianto27/xsis-movie"
   },
-  "keywords": [
-    "Web",
-    "Services",
-    "REST",
-    "API",
-    "COREnglish"
-  ],
-  "author": "Dhea Aria Rachman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/corenglish-web-app/corenglsih-rest-api/issues"
-  },
-  "homepage": "https://gitlab.com/corenglish-web-app/corenglsih-rest-api#readme"
+  "author": "Perdianto",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
 }
