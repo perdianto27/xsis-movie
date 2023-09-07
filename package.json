@@ -8,7 +8,6 @@
     "test": "jest --coverage=true --forceExit"
   },
   "dependencies": {
-    "aws-sdk": "^2.1452.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.6",
@@ -38,13 +37,13 @@
     "twilio": "^3.84.0",
     "uuid": "^9.0.0"
   },
+  "devDependencies": {
+    "@types/jest": "^25.2.3"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/perdianto27/xsis-movie"
   },
   "author": "Perdianto",
-  "license": "MIT",
-  "devDependencies": {
-    "jest": "^29.6.4"
-  }
+  "license": "MIT"
 }
