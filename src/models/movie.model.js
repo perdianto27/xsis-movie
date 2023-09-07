@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
 			},
 			description: { type: Sequelize.STRING },
 			rating: { type: Sequelize.FLOAT },
-			IMAGE: { type: Sequelize.STRING, allowNull: true },
+			image: { type: Sequelize.STRING, allowNull: true },
 			verified_at: { type: Sequelize.DATE },
 			created_at: {
 				type: Sequelize.DATE,
