@@ -20,7 +20,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-const Movie = require("../models/movie.model")(sequelize, Sequelize);
+const Movie = require("./movie.model")(sequelize, Sequelize);
 module.exports = {
 	db,
 	Movie

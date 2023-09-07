@@ -8,7 +8,7 @@ const getMovie = async () => {
 };
 
 const getMovieById = async (id) => {
-	const movie = await MOvie.findByPk(id);
+	const movie = await Movie.findByPk(id);
 	if (!movie) {
 		throw new NotFound("movie not found");
 	}

@@ -4,13 +4,11 @@ module.exports = (sequelize, Sequelize) => {
 		{
 			title: {
 				type: Sequelize.STRING,
-				unique: true,
-				allowNull: false,
+				allowNull: false
 			},
 			description: { type: Sequelize.STRING },
 			rating: { type: Sequelize.FLOAT },
 			image: { type: Sequelize.STRING, allowNull: true },
-			verified_at: { type: Sequelize.DATE },
 			created_at: {
 				type: Sequelize.DATE,
 				allowNull: false,
@@ -20,7 +18,7 @@ module.exports = (sequelize, Sequelize) => {
 				type: Sequelize.DATE,
 				allowNull: false,
 				defaultValue: sequelize.fn("NOW"),
-			},
+			}
 		},
 		{
 			timestamps: false,

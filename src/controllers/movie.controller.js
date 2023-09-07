@@ -5,7 +5,7 @@ exports.getMovie = async (req, res, next) => {
 	try {
 		const response = await service.getMovie();
 
-		return successResponse(res, response, "User Information", 201);
+		return res.status(200).json(response);
 	} catch (error) {
 		next(error);
 	}
