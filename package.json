@@ -1,0 +1,66 @@
+{
+  "name": "corenglish-rest-api",
+  "version": "1.0.0",
+  "description": "COREnglish REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bin/www",
+    "key:generate": "node bin/randomstring.js",
+    "db:seed:create": "npx sequelize-cli seed:generate",
+    "db:seed:up": "npx sequelize-cli db:seed:all",
+    "db:seed:down": "npx sequelize-cli db:seed:undo:all",
+    "db:migration:create": "npx sequelize-cli migration:generate",
+    "db:migration:up": "npx sequelize-cli db:migrate",
+    "db:migration:down": "npx sequelize-cli db:migrate:undo",
+    "db:migration:down:all": "npx sequelize-cli db:migrate:undo:all"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1452.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "formidable": "^2.0.1",
+    "fs": "0.0.2",
+    "i18next": "^22.0.4",
+    "i18next-http-middleware": "^3.2.1",
+    "i18next-node-fs-backend": "^2.1.3",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.8.0",
+    "nvm": "0.0.4",
+    "path": "^0.12.7",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "request": "^2.88.2",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.5.2",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0",
+    "twilio": "^3.84.0",
+    "uuid": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/corenglish-web-app/corenglsih-rest-api.git"
+  },
+  "keywords": [
+    "Web",
+    "Services",
+    "REST",
+    "API",
+    "COREnglish"
+  ],
+  "author": "Dhea Aria Rachman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/corenglish-web-app/corenglsih-rest-api/issues"
+  },
+  "homepage": "https://gitlab.com/corenglish-web-app/corenglsih-rest-api#readme"
+}
