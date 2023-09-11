@@ -1,3 +1,5 @@
+<p align="center" ><img height="400px" src="https://github.com/perdianto27/xsis-movie/blob/main/ss.png"> </p>
+<br>
 
 1. NodeJS Framework
    > [ExpressJS](https://expressjs.com)
