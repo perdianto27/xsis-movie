@@ -3,7 +3,7 @@ const MovieRouter = require('../routes/movie/index');
 const TestHelper = require('./test_helper');
 
 let server;
-
+let id = 3;
 describe('Movie ', function () {
   beforeAll(() => {
       server = TestHelper.createTestServer('/', MovieRouter);
@@ -24,7 +24,7 @@ describe('Movie ', function () {
 
   test('It should return status response 200: Successfully GET Movie By ID', async () => {
     const response = await request(server)
-    .get('/movie/2')
+    .get(`/movie/${id}`)
     .expect(200)
     .then((res) => {
       expect(res.statusCode).toEqual(200);
@@ -55,7 +55,7 @@ describe('Movie ', function () {
       image: 'https'
     }
     const response = await request(server)
-    .patch('/movie/3')
+    .patch(`/movie/${id}`)
     .send(payload)
     .expect(200)
     .then((res) => {
@@ -65,7 +65,7 @@ describe('Movie ', function () {
 
   test('It should return status response 200: Successfully Delete Movie', async () => {
     const response = await request(server)
-    .delete('/movie/4')
+    .delete(`/movie/${id}`)
     .expect(200)
     .then((res) => {
       expect(res.statusCode).toEqual(200);
